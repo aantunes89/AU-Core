@@ -6,7 +6,8 @@
     "start": "ng serve --proxy-config ./proxy.json",
     "build": "ng build",
     "test": "ng test",
-    "lint": "ng lint",
+    "lint": "tsc --noEmit && eslint . --ext js,ts,json --quiet --fix",
+    "format": "prettier src/**/*.ts --write",
     "e2e": "ng e2e",
     "server": "./node_modules/.bin/ts-node -P ./server.tsconfig.json ./server.ts"
   },
@@ -41,7 +42,12 @@
     "@types/jasmine": "~3.6.0",
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "^12.11.1",
+    "@typescript-eslint/eslint-plugin": "^5.9.0",
+    "@typescript-eslint/parser": "^5.9.0",
     "codelyzer": "^6.0.0",
+    "eslint": "^8.6.0",
+    "eslint-config-prettier": "^8.3.0",
+    "husky": "^7.0.4",
     "jasmine-core": "~3.8.0",
     "jasmine-spec-reporter": "~5.0.0",
     "karma": "~6.3.2",
@@ -49,9 +55,17 @@
     "karma-coverage-istanbul-reporter": "~3.0.2",
     "karma-jasmine": "~4.0.0",
     "karma-jasmine-html-reporter": "^1.7.0",
+    "prettier": "^2.5.1",
+    "prettier-eslint": "^13.0.0",
     "protractor": "~7.0.0",
     "ts-node": "~5.0.1",
     "tslint": "~6.1.0",
     "typescript": "~4.4.4"
-  }
+  },
+  "husky": {
+    "hooks": {
+     "pre-commit": "yarn lint",
+     "pre-push": "yarn format",
+    }
+ }
 }
