@@ -5,11 +5,19 @@
   />
 </div>
 
+<button (click)="onCoursesEdit()">Edit Courses</button>
 
-<div class="courses">
-  <course-card *ngFor="let course of courses ; index as i;"
+<div class="courses" #container>
+  <course-card
+    *ngFor="let course of courses; index as i"
     [course]="course"
     [cardIndex]="i + 1"
     (courseEmmiter)="onCourseSelected($event)"
   ></course-card>
+
+  <!-- <course-card
+    #cardRef1
+    [course]="courses[0]"
+    (courseEmmiter)="onCourseSelected($event)"
+  ></course-card> -->
 </div>

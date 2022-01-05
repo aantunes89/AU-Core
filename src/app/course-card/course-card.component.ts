@@ -13,10 +13,14 @@ enum Category {
   styleUrls: ["./course-card.component.css"],
 })
 export class CourseCardComponent implements OnInit {
-  @Input() course: Course;
-  @Input() cardIndex: number;
+  @Input()
+  course: Course;
 
-  @Output() courseEmmiter = new EventEmitter<Course>();
+  @Input()
+  cardIndex: number;
+
+  @Output()
+  courseEmmiter = new EventEmitter<Course>();
 
   constructor() {}
 

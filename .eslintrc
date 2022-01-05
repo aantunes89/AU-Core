@@ -11,6 +11,7 @@
     "sourceType": "module"
   },
   "rules": {
-    "no-debugger": "error"
+    "no-debugger": "error",
+    "quotes": "off"
   }
 }
