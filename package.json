@@ -55,6 +55,7 @@
     "karma-coverage-istanbul-reporter": "~3.0.2",
     "karma-jasmine": "~4.0.0",
     "karma-jasmine-html-reporter": "^1.7.0",
+    "lint-staged": "^12.1.5",
     "prettier": "^2.5.1",
     "prettier-eslint": "^13.0.0",
     "protractor": "~7.0.0",
@@ -64,8 +65,8 @@
   },
   "husky": {
     "hooks": {
-     "pre-commit": "yarn lint",
-     "pre-push": "yarn format",
+      "pre-commit": "lint-staged",
+      "pre-push": "yarn format"
     }
- }
+  }
 }
