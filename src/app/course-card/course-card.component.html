@@ -1,1 +1,40 @@
-<p>course-card works!</p>
+
+<section *ngIf="course"
+  class="course-card"
+  [ngClass]="cardClasses()"
+>
+
+  <header class="course-title">
+    {{ cardIndex + " " + course.description }}
+  </header>
+
+  <img *ngIf="course.iconUrl else noImg"
+    width="300"
+    alt="Angular Logo"
+    [src]="course.iconUrl"
+  />
+
+  <ng-template #noImg>
+    <p>No image is available</p>
+  </ng-template>
+
+
+  <main class="course-description">
+    {{ course.longDescription }}
+  </main>
+
+  <div class="course-category" [ngSwitch]="course.category" >
+
+    <div class="category" *ngSwitchCase="'BEGINNER'" >Begginer</div>
+
+    <div class="category" *ngSwitchCase="'INTERMEDIATE'" >Intermediate</div>
+
+    <div class="category" *ngSwitchCase="'ADVANCED'" >Advanced</div>
+
+    <div class="category" *ngSwitchDefault >All Levels</div>
+
+  </div>
+
+  <button (click)="onCourseViewed()" >View Course</button>
+
+</section>
