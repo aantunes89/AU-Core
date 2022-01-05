@@ -11,6 +11,6 @@
     "sourceType": "module"
   },
   "rules": {
-    // ...your other rules
+    "no-debugger": "error"
   }
 }

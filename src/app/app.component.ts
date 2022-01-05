@@ -14,6 +14,6 @@ export class AppComponent {
 
   public onCourseSelected(course: Course): void {
     console.log(course);
-
+    debugger;
   }
 }
