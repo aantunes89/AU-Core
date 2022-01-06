@@ -1,18 +1,33 @@
 <div class="top-menu">
-  <img
-    class="logo"
-    src="https://angular-academy.s3.amazonaws.com/main-logo/main-page-logo-small-hat.png"
-  />
+  <img class="logo" src="https://angular-academy.s3.amazonaws.com/main-logo/main-page-logo-small-hat.png" />
 </div>
 
 <div class="courses" *ngIf="courses[0] as course">
-  <course-card
-    *ngFor="let course of courses; index as i"
-    [course]="course"
-    [cardIndex]="i + 1"
-    (courseEmmiter)="onCourseSelected($event)"
-  ></course-card>
+  <course-card [course]="course" (courseEmmiter)="onCourseSelected($event)">
 
-  <course-card (courseEmmiter)="onCourseSelected($event)" [course]="course" s>
+    <!--
+      Podemos mostrar tudo dentro da div pois estamos
+      utilizando content projection com referencia da classe css
+    -->
+    <div class="course-image">
+
+      <img width="300"
+        alt="Angular Logo"
+        [src]="course.iconUrl"
+      />
+
+      <h5>Total Lessons 5</h5>
+
+    </div>
+
+    <div class="course-description">
+      <main class="course-description">
+        {{ course.longDescription }}
+      </main>
+    </div>
+
+    <!-- não aparece pq não esta dentro do seletor utilizado em contet projection -->
+    <h5>Dummy text for test</h5>
+
   </course-card>
 </div>

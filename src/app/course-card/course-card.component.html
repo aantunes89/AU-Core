@@ -1,22 +1,19 @@
 <section *ngIf="course" class="course-card" [ngClass]="cardClasses()">
   <header class="course-title">
-    {{ cardIndex + ' ' + course.description }}
+    {{ (cardIndex || "") + ' ' + course.description }}
   </header>
 
-  <img
-    *ngIf="course.iconUrl; else noImg"
-    width="300"
-    alt="Angular Logo"
-    [src]="course.iconUrl"
-  />
+  <ng-content select=".course-image" ></ng-content>
 
   <ng-template #noImg>
     <p>No image is available</p>
   </ng-template>
 
-  <main class="course-description">
+  <ng-content select=".course-description"></ng-content>
+
+  <!-- <main class="course-description">
     {{ course.longDescription }}
-  </main>
+  </main> -->
 
   <div class="course-category" [ngSwitch]="course.category">
     <div class="category" *ngSwitchCase="'BEGINNER'">Begginer</div>
