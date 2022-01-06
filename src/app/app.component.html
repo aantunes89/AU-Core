@@ -5,9 +5,9 @@
   />
 </div>
 
-
 <div class="courses">
-  <course-card *ngFor="let course of courses ; index as i;"
+  <course-card
+    *ngFor="let course of courses; index as i"
     [course]="course"
     [cardIndex]="i + 1"
     (courseEmmiter)="onCourseSelected($event)"
