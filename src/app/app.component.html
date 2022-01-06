@@ -5,11 +5,14 @@
   />
 </div>
 
-<div class="courses">
-  <course-card
+<div class="courses" *ngIf="courses[0] as course">
+  <!-- <course-card
     *ngFor="let course of courses; index as i"
     [course]="course"
     [cardIndex]="i + 1"
     (courseEmmiter)="onCourseSelected($event)"
-  ></course-card>
+  ></course-card> -->
+
+  <course-card (courseEmmiter)="onCourseSelected($event)" [course]="course" s>
+  </course-card>
 </div>

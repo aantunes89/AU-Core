@@ -28,7 +28,9 @@
             "style": "camelCase",
             "type": "attribute"
           }
-        ]
+        ],
+        "arrow-body-style": "error",
+        "computed-property-spacing": "warn"
       }
     },
     {
