@@ -59,7 +59,7 @@
     "karma-coverage-istanbul-reporter": "~3.0.2",
     "karma-jasmine": "~4.0.0",
     "karma-jasmine-html-reporter": "^1.7.0",
-    "lint-staged": "^12.1.5",
+    "lint-staged": "^12.1.7",
     "prettier": "^2.5.1",
     "prettier-eslint": "^13.0.0",
     "protractor": "~7.0.0",
@@ -71,5 +71,10 @@
       "pre-commit": "echo teste",
       "pre-push": "npx pretty-quick --staged ng lint"
     }
+  },
+  "lint-staged": {
+    "*ts": [
+      "eslint --fix"
+    ]
   }
 }
