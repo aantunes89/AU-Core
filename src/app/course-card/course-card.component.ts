@@ -21,8 +21,6 @@ export class CourseCardComponent {
   constructor() {}
 
   public onCourseViewed(): void {
-    console.log('card component');
-
     this.courseEmmiter.emit(this.course);
   }
 
