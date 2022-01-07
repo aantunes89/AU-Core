@@ -68,7 +68,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm-test",
+      "pre-commit": "echo teste",
       "pre-push": "npx pretty-quick --staged ng lint"
     }
   }
