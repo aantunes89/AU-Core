@@ -29,6 +29,8 @@
             "type": "attribute"
           }
         ],
+        "@angular-eslint/no-input-rename": "off",
+        "@angular-eslint/no-empty-lifecycle-method": "off",
         "arrow-body-style": "error",
         "computed-property-spacing": "warn"
       }

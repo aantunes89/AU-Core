@@ -1,9 +1,13 @@
-<section *ngIf="course" class="course-card" [ngClass]="cardClasses()">
+<section *ngIf="course"
+  class="course-card"
+  [ngClass]="cardClasses()"
+>
+
   <header class="course-title">
     {{ (cardIndex || "") + ' ' + course.description }}
   </header>
 
-  <ng-content select=".course-image" ></ng-content>
+  <ng-content select="course-image" ></ng-content>
 
   <ng-template #noImg>
     <p>No image is available</p>
