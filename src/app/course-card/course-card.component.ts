@@ -8,17 +8,10 @@ import {
   EventEmitter,
   Input,
   Output,
-  QueryList,
-  ViewChild
+  QueryList
 } from '@angular/core';
 import { CourseImageComponent } from '../course-image/course-image.component';
-import { Course } from '../model/course';
-
-enum Category {
-  BEGINNER = 'BEGINNER',
-  INTERMEDIATE = 'INTERMEDIATE',
-  ADVANCED = 'ADVANCED'
-}
+import { Course } from '../core/model/Course';
 
 @Component({
   selector: 'course-card',

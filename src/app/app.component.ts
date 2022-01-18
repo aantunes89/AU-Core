@@ -1,7 +1,7 @@
 import { Component, ElementRef, QueryList, ViewChildren } from '@angular/core';
 import { COURSES } from '../db-data';
 import { CourseCardComponent } from './course-card/course-card.component';
-import { Course } from './model/course';
+import { Course } from './core/model/Course';
 
 @Component({
   selector: 'app-root',
